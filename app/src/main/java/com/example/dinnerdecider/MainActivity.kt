@@ -23,16 +23,13 @@ class MainActivity : AppCompatActivity() {
 
         text_view1 = findViewById(R.id.text_id)
         imageview1 = findViewById(R.id.evening_image)
-        var text_view1: TextView = findViewById(R.id.text_id)
 
         button1.setOnClickListener { chooseEveningLocation() }
         resetButton.setOnClickListener { reset() }
     }
 
     private fun chooseEveningLocation()  {
-
-        val randInt = Random.nextInt(10) + 1
-
+        var randInt = Random.nextInt(10) + 1
         val drawableResource = when (randInt) {
             1 -> R.drawable.roaster
             2 -> R.drawable.shd
@@ -46,15 +43,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (randInt == 10) {
-            text_view1.text = randInt.toString()
+            text_view1.text = ""
             imageview1.setImageResource(R.drawable.confused)
         }
         else if (randInt == 1){
-            text_view1.text = "I LOVE YOU GUNDU!!!"
+            text_view1.text = "I LOVE YOU GUNDU"
             imageview1.setImageResource(drawableResource)
         }
         else {
-            text_view1.text = randInt.toString()
+            text_view1.text = ""
             imageview1.setImageResource(drawableResource)
         }
     }
